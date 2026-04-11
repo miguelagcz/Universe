@@ -7,6 +7,7 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { FaInstagram, FaLinkedin, FaGithub, FaGlobe } from "react-icons/fa";
 
 
+
 /* 🎥 Controlador de cámara */
 function CameraController({ pointer }) {
   const { camera } = useThree();
@@ -117,6 +118,7 @@ function Stars({ count, size, speed, explodeTrigger, hue }) {
     </points>
   );
 }
+import { Analytics } from "@vercel/analytics/next"
 
 /* 🌌 Componente principal */
 export default function Universe() {
@@ -654,6 +656,7 @@ const socialButtonHoverStyle = {
     >
       © {new Date().getFullYear()} MiguelCruz. All rights reserved.
     </footer>
+    <analytics/>
   </div>
 );
 }
