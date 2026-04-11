@@ -333,7 +333,7 @@ const socialButtonHoverStyle = {
       color: "rgba(255,255,255,0.9)",
     }}
   >
-    Densidad: <span style={{ opacity: 0.8 }}>{density}</span>
+    Density: <span style={{ opacity: 0.8 }}>{density}</span>
     <input
       type="range"
       min="500"
@@ -423,7 +423,7 @@ const socialButtonHoverStyle = {
       e.currentTarget.style.boxShadow = `0 0 15px hsla(${hue}, 100%, 70%, 0.4)`;
     }}
   >
-    Nuevo Universo
+    New Universe
   </button>
 
 {/* 🔊 Botón de Encendido/Apagado de Sonido */}
