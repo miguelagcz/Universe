@@ -656,7 +656,7 @@ const socialButtonHoverStyle = {
     >
       © {new Date().getFullYear()} MiguelCruz. All rights reserved.
     </footer>
-    <analytics/>
+    <Analytics/>
   </div>
 );
 }
