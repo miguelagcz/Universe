@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
+/* Variables de color */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+
+  /* Variables de fuentes provenientes de next/font */
+ --font-sans: var(--font-space-grotesk);
+  --font-heading: var(--font-orbitron);
 }
 
+/* Integración con Tailwind */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-space-grotesk);
+  --font-heading: var(--font-orbitron);
 }
 
+/* Modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
 
+/* Estilos base */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Aplicar Orbitron a todos los títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron), sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Opcional: mejorar el renderizado del texto */
+* {
+  box-sizing: border-box;
+}
+
+/* 🌌 Scrollbar para Chrome, Edge y Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617; /* Fondo oscuro acorde al universo */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(165, 180, 252, 0.8),
+    rgba(99, 102, 241, 0.8)
+  );
+  border-radius: 999px;
+  border: 2px solid #020617;
+  box-shadow: 0 0 8px rgba(165, 180, 252, 0.6);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(199, 210, 254, 1),
+    rgba(129, 140, 248, 1)
+  );
+  box-shadow: 0 0 12px rgba(165, 180, 252, 0.9);
+}
+
+/* 🌠 Compatibilidad con Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(165, 180, 252, 0.8) #020617;
+}
+
+/* 🌌 Estilo base del slider */
+.cosmic-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 🔵 Thumb para Chrome, Edge y Safari */
+.cosmic-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #a5b4fc 40%, #6366f1 100%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 8px rgba(165, 180, 252, 0.8),
+    0 0 16px rgba(99, 102, 241, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cosmic-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow:
+    0 0 12px rgba(165, 180, 252, 1),
+    0 0 24px rgba(99, 102, 241, 0.9);
+}
+
+/* 🟣 Thumb para Firefox */
+.cosmic-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #a5b4fc 40%, #6366f1 100%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 8px rgba(165, 180, 252, 0.8),
+    0 0 16px rgba(99, 102, 241, 0.6);
+}
+
+/* 🌠 Track para Firefox */
+.cosmic-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
 }
